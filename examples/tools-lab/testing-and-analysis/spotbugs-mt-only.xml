@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Report only multithreaded-correctness (MT_CORRECTNESS) bugs, to keep the demo focused -->
+<FindBugsFilter>
+    <Match>
+        <Bug category="MT_CORRECTNESS"/>
+    </Match>
+</FindBugsFilter>

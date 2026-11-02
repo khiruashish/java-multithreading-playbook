@@ -1,0 +1,6 @@
+:root { --md-code-font: "JetBrains Mono", "Roboto Mono", monospace; }
+.md-typeset table:not([class]) { font-size: .72rem; }
+.md-typeset .level { display:inline-block; padding:0 .45em; border-radius:.3em; font-size:.65rem; font-weight:700; color:#fff; }
+.level.l1 { background:#2e7d32; } .level.l2 { background:#1565c0; }
+.level.l3 { background:#6a1b9a; } .level.l4 { background:#c62828; }
+.md-typeset .mermaid { text-align:center; }

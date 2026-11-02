@@ -1,0 +1,202 @@
+site_name: Java Multithreading & Concurrency Playbook
+site_description: From your first Thread to 15-year architect level — Java 8 to Java 21/24/25, with a deep focus on virtual threads.
+repo_url: https://github.com/khiruashish/java-multithreading-playbook
+repo_name: khiruashish/java-multithreading-playbook
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: ["."]
+      check_paths: true
+  - pymdownx.mark
+  - pymdownx.keys
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search
+
+nav:
+  - Home:
+      - index.md
+      - Learning Path (0 → 15 yrs): getting-started/learning-path.md
+      - Java 8 → 25 Evolution: getting-started/java-evolution.md
+      - Cheat Sheet: getting-started/cheat-sheet.md
+  - Foundations:
+      - foundations/index.md
+      - Threads & Lifecycle: foundations/threads-basics.md
+      - Java Memory Model: foundations/java-memory-model.md
+      - synchronized, wait/notify: foundations/synchronization.md
+      - Explicit Locks: foundations/locks.md
+      - Atomics, CAS & VarHandle: foundations/atomics.md
+      - Liveness Hazards: foundations/liveness.md
+  - Java 8 Toolkit:
+      - java8-toolkit/index.md
+      - Executor Framework: java8-toolkit/executors.md
+      - Thread Pool Sizing: java8-toolkit/pool-sizing.md
+      - CompletableFuture: java8-toolkit/completable-future.md
+      - Fork/Join & Parallel Streams: java8-toolkit/fork-join.md
+      - Concurrent Collections: java8-toolkit/concurrent-collections.md
+      - Synchronizers: java8-toolkit/synchronizers.md
+      - ThreadLocal: java8-toolkit/threadlocal.md
+  - Virtual Threads:
+      - virtual-threads/index.md
+      - "L1: Basics": virtual-threads/01-basics.md
+      - "L2: How They Work": virtual-threads/02-internals.md
+      - "L3: Pinning & JEP 491": virtual-threads/03-pinning.md
+      - "L4: 25 Worked Examples": virtual-threads/04-examples.md
+      - "L5: Patterns & Backpressure": virtual-threads/05-patterns.md
+      - "L6: Migration Guide": virtual-threads/06-migration.md
+      - "L7: Pitfalls & Anti-patterns": virtual-threads/07-pitfalls.md
+      - "L8: Observability & Debugging": virtual-threads/08-observability.md
+      - "L9: Architect Level": virtual-threads/09-architect.md
+  - Modern Java:
+      - modern/index.md
+      - Structured Concurrency: modern/structured-concurrency.md
+      - Scoped Values: modern/scoped-values.md
+      - Virtual Threads vs Reactive: modern/vt-vs-reactive.md
+      - Flow API & Reactive Streams: modern/flow-api.md
+  - Spring Boot:
+      - production/index.md
+      - Enabling Virtual Threads: production/spring-boot-setup.md
+      - Fan-out Aggregator Service: production/fan-out-service.md
+      - Async, Scheduling & Messaging: production/async-scheduling-messaging.md
+      - Database & Connection Pools: production/database.md
+      - Resilience (Rate limit, Bulkhead, Timeout): production/resilience.md
+      - Request Context & Scoped Values: production/request-context.md
+      - Observability: production/observability.md
+      - Testing Concurrent Code: production/testing.md
+      - Graceful Shutdown & Ops: production/shutdown-ops.md
+      - Complete Sample Project: production/sample-project.md
+  - System Design:
+      - system-design/index.md
+      - Thread & Executor Diagrams: system-design/executor-diagrams.md
+      - Virtual Thread Scheduling: system-design/vt-scheduling.md
+      - Request Flow Sequences: system-design/request-flows.md
+      - Case Studies: system-design/case-studies.md
+      - Distributed Concurrency: system-design/distributed-concurrency.md
+  - Performance:
+      - performance/index.md
+      - Time & Cost Savings 8 → 21/24: performance/savings.md
+      - Benchmarking (JMH, jcstress): performance/benchmarking.md
+      - False Sharing & Hardware: performance/hardware.md
+  - Advanced:
+      - advanced/index.md
+      - Lock-free & Wait-free: advanced/lock-free.md
+      - Debugging & Thread Dumps: advanced/debugging.md
+      - Concurrency Patterns Catalog: advanced/patterns-catalog.md
+      - Common Bugs Gallery: advanced/bugs-gallery.md
+  - Tools:
+      - tools/index.md
+      - JDK Command-line Tools: tools/jdk-cli.md
+      - JFR & Mission Control: tools/jfr-jmc.md
+      - Profilers: tools/profilers.md
+      - JMH Benchmarks: tools/jmh.md
+      - jcstress: tools/jcstress.md
+      - Testing Libraries: tools/testing-libraries.md
+      - Static Analysis: tools/static-analysis.md
+      - Production Observability: tools/observability.md
+      - Load Testing: tools/load-testing.md
+      - Concurrency Libraries: tools/libraries.md
+  - Coding Interview:
+      - coding-interview/index.md
+      - Sequencing & Signalling:
+          - "1. Odd/Even Printer": coding-interview/01-odd-even.md
+          - "2. Round-Robin N Threads": coding-interview/02-round-robin.md
+          - "3. Multithreaded FizzBuzz": coding-interview/03-fizzbuzz.md
+          - "4. Print in Order": coding-interview/04-print-in-order.md
+          - "5. Building H2O": coding-interview/05-h2o.md
+      - Build Your Own Primitive:
+          - "6. Bounded Blocking Queue": coding-interview/06-bounded-blocking-queue.md
+          - "7. Thread Pool": coding-interview/07-thread-pool.md
+          - "8. Read-Write Lock": coding-interview/08-read-write-lock.md
+          - "9. Cyclic Barrier": coding-interview/09-cyclic-barrier.md
+          - "10. Delayed Task Scheduler": coding-interview/10-delayed-scheduler.md
+      - Classic Problems:
+          - "11. Deadlock: Create, Detect, Fix": coding-interview/11-deadlock.md
+          - "12. Dining Philosophers": coding-interview/12-dining-philosophers.md
+          - "13. Sleeping Barber": coding-interview/13-sleeping-barber.md
+          - "14. Bank Transfer": coding-interview/14-bank-transfer.md
+      - Real-World Systems:
+          - "15. Producer-Consumer Pipeline": coding-interview/15-pipeline.md
+          - "16. Thread-safe LRU Cache": coding-interview/16-lru-cache.md
+          - "17. Token Bucket Rate Limiter": coding-interview/17-rate-limiter.md
+          - "18. Single-Flight Cache": coding-interview/18-single-flight.md
+          - "19. Concurrent Web Crawler": coding-interview/19-web-crawler.md
+          - "20. Parallel Merge Sort": coding-interview/20-merge-sort.md
+          - "21. Best-Price Fan-out": coding-interview/21-best-price-fanout.md
+  - Interview:
+      - interview/index.md
+      - "0-2 Years": interview/level-1-junior.md
+      - "3-5 Years": interview/level-2-mid.md
+      - "6-9 Years": interview/level-3-senior.md
+      - "10-15 Years": interview/level-4-architect.md
+      - Virtual Threads Deep-Dive Q&A: interview/virtual-threads-qa.md
+      - Coding Problems: interview/coding-problems.md
+      - System Design Rounds: interview/system-design-rounds.md
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn

@@ -1,0 +1,10 @@
+site/
+.venv/
+target/
+build/
+.gradle/
+.idea/
+*.iml
+__pycache__/
+results/
+jcstress-results-*
