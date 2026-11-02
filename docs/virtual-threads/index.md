@@ -3,17 +3,108 @@
 Virtual threads (JEP 444, **final in Java 21**) are the biggest change to Java concurrency since Java 5. This tab is
 a nine-level course. Each level assumes the previous ones.
 
-| Level | Page | You will be able to… | Exp. |
-|---|---|---|---|
-| L1 | [Basics](01-basics.md) | Create VTs, use the VT executor, explain why they're cheap | 0–2 |
-| L2 | [How They Work](02-internals.md) | Explain continuations, mount/unmount, carriers, the scheduler | 3–5 |
-| L3 | [Pinning & JEP 491](03-pinning.md) | Detect and fix pinning on 21, and explain what changed in 24 | 3–6 |
-| L4 | [25 Worked Examples](04-examples.md) | Apply VTs to HTTP, JDBC, files, queues, sockets, batch jobs, … | 2–8 |
-| L5 | [Patterns & Backpressure](05-patterns.md) | Bulkheads, rate limits, fan-out/fan-in, pipelines, hedging | 5–9 |
-| L6 | [Migration Guide](06-migration.md) | Move a Java 8/11/17 service to VTs safely | 5–10 |
-| L7 | [Pitfalls](07-pitfalls.md) | Avoid the 17 mistakes teams actually make | 3–10 |
-| L8 | [Observability](08-observability.md) | Use JFR, thread dumps, and metrics with millions of threads | 6–12 |
-| L9 | [Architect Level](09-architect.md) | Capacity models, platform-wide adoption, VT vs reactive decisions | 10–15 |
+<div class="pb-cards" markdown>
+
+<div class="pb-card" markdown>
+<span class="pb-step">1</span>
+<span class="pb-icon">:material-sprout:</span>
+
+[L1 · Basics](01-basics.md){ .pb-title }
+
+Create VTs, use the VT executor, explain why they're cheap
+
+<div class="pb-meta"><span class="pb-chip">0–2 yrs</span></div>
+</div>
+
+<div class="pb-card" markdown>
+<span class="pb-step">2</span>
+<span class="pb-icon">:material-cog-transfer:</span>
+
+[L2 · How They Work](02-internals.md){ .pb-title }
+
+Explain continuations, mount/unmount, carriers, the scheduler
+
+<div class="pb-meta"><span class="pb-chip">3–5 yrs</span></div>
+</div>
+
+<div class="pb-card" markdown>
+<span class="pb-step">3</span>
+<span class="pb-icon">:material-pin:</span>
+
+[L3 · Pinning & JEP 491](03-pinning.md){ .pb-title }
+
+Detect and fix pinning on 21, and explain what changed in 24
+
+<div class="pb-meta"><span class="pb-chip">3–6 yrs</span></div>
+</div>
+
+<div class="pb-card" markdown>
+<span class="pb-step">4</span>
+<span class="pb-icon">:material-flask:</span>
+
+[L4 · 25 Worked Examples](04-examples.md){ .pb-title }
+
+Apply VTs to HTTP, JDBC, files, queues, sockets, batch jobs, …
+
+<div class="pb-meta"><span class="pb-chip">2–8 yrs</span></div>
+</div>
+
+<div class="pb-card" markdown>
+<span class="pb-step">5</span>
+<span class="pb-icon">:material-shield-half-full:</span>
+
+[L5 · Patterns & Backpressure](05-patterns.md){ .pb-title }
+
+Bulkheads, rate limits, fan-out/fan-in, pipelines, hedging
+
+<div class="pb-meta"><span class="pb-chip">5–9 yrs</span></div>
+</div>
+
+<div class="pb-card" markdown>
+<span class="pb-step">6</span>
+<span class="pb-icon">:material-swap-horizontal:</span>
+
+[L6 · Migration Guide](06-migration.md){ .pb-title }
+
+Move a Java 8/11/17 service to VTs safely
+
+<div class="pb-meta"><span class="pb-chip">5–10 yrs</span></div>
+</div>
+
+<div class="pb-card" markdown>
+<span class="pb-step">7</span>
+<span class="pb-icon">:material-alert:</span>
+
+[L7 · Pitfalls](07-pitfalls.md){ .pb-title }
+
+Avoid the 17 mistakes teams actually make
+
+<div class="pb-meta"><span class="pb-chip">3–10 yrs</span></div>
+</div>
+
+<div class="pb-card" markdown>
+<span class="pb-step">8</span>
+<span class="pb-icon">:material-eye:</span>
+
+[L8 · Observability](08-observability.md){ .pb-title }
+
+Use JFR, thread dumps, and metrics with millions of threads
+
+<div class="pb-meta"><span class="pb-chip">6–12 yrs</span></div>
+</div>
+
+<div class="pb-card" markdown>
+<span class="pb-step">9</span>
+<span class="pb-icon">:material-city-variant:</span>
+
+[L9 · Architect Level](09-architect.md){ .pb-title }
+
+Capacity models, platform-wide adoption, VT vs reactive decisions
+
+<div class="pb-meta"><span class="pb-chip">10–15 yrs</span></div>
+</div>
+
+</div>
 
 ## The idea in one diagram
 
