@@ -21,11 +21,12 @@ for a 50k-RPS platform"**, covering every concurrency API from **Java 8** throug
 | **Foundations** | Threads, lifecycle, Java Memory Model, `synchronized`, locks, atomics, deadlock/livelock/starvation | L1–L2 |
 | **Java 8 Toolkit** | Executors, pool sizing, `CompletableFuture`, Fork/Join, concurrent collections, synchronizers, `ThreadLocal` | L2–L3 |
 | **Virtual Threads** | Nine progressive levels: basics → internals → pinning → 25 examples → patterns → migration → pitfalls → observability → architect | L1–L4 |
-| **Modern Concurrency** | Structured concurrency, scoped values, virtual threads vs reactive, Flow API | L3–L4 |
-| **Production Code** | Spring Boot 3.2+/4.x code you can paste: config, fan-out aggregator, `@Async`, Kafka, JDBC, resilience, context, metrics, tests, shutdown | L2–L4 |
+| **Modern Java** | Structured concurrency, scoped values, virtual threads vs reactive, Flow API | L3–L4 |
+| **Spring Boot** | Spring Boot 3.2+/4.x code you can paste: config, fan-out aggregator, `@Async`, Kafka, JDBC, resilience, context, metrics, tests, shutdown | L2–L4 |
 | **System Design** | Sequence diagrams, scheduling diagrams, case studies, distributed concurrency | L3–L4 |
 | **Performance** | How much time, memory, and money Java 21/24 saves over Java 8, plus JMH and jcstress | L3–L4 |
 | **Advanced** | Lock-free algorithms, thread dumps, a pattern catalogue, and a gallery of real bugs | L3–L4 |
+| **Coding Interview** | 21 classic multithreading coding problems (odd/even, H2O, blocking queue, thread pool, barrier, scheduler, deadlock, philosophers, LRU, rate limiter, crawler, …) with runnable tested solutions, diagrams, and line-by-line walkthroughs | L1–L4 |
 | **Interview** | 200+ questions with answers, grouped by level, plus coding problems and system design rounds | All |
 
 ## The one-paragraph summary
@@ -61,5 +62,6 @@ mkdocs serve        # http://127.0.0.1:8000
 Runnable examples live in [`examples/`](https://github.com/khiruashish/java-multithreading-playbook/tree/main/examples):
 
 * `examples/plain-java`: single-file programs you run with `java File.java` on JDK 21+.
+* `examples/interview-coding`: 21 self-checking interview solutions (`./run-all.sh`).
 * `examples/spring-boot-vt`: a complete Spring Boot service with virtual threads, a fan-out aggregator,
   bulkheads, scoped request context, metrics, and tests.

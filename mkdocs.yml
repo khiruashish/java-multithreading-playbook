@@ -110,13 +110,13 @@ nav:
       - "L7: Pitfalls & Anti-patterns": virtual-threads/07-pitfalls.md
       - "L8: Observability & Debugging": virtual-threads/08-observability.md
       - "L9: Architect Level": virtual-threads/09-architect.md
-  - Modern Concurrency:
+  - Modern Java:
       - modern/index.md
       - Structured Concurrency: modern/structured-concurrency.md
       - Scoped Values: modern/scoped-values.md
       - Virtual Threads vs Reactive: modern/vt-vs-reactive.md
       - Flow API & Reactive Streams: modern/flow-api.md
-  - Production Code (Spring Boot):
+  - Spring Boot:
       - production/index.md
       - Enabling Virtual Threads: production/spring-boot-setup.md
       - Fan-out Aggregator Service: production/fan-out-service.md
@@ -146,6 +146,33 @@ nav:
       - Debugging & Thread Dumps: advanced/debugging.md
       - Concurrency Patterns Catalog: advanced/patterns-catalog.md
       - Common Bugs Gallery: advanced/bugs-gallery.md
+  - Coding Interview:
+      - coding-interview/index.md
+      - Sequencing & Signalling:
+          - "1. Odd/Even Printer": coding-interview/01-odd-even.md
+          - "2. Round-Robin N Threads": coding-interview/02-round-robin.md
+          - "3. Multithreaded FizzBuzz": coding-interview/03-fizzbuzz.md
+          - "4. Print in Order": coding-interview/04-print-in-order.md
+          - "5. Building H2O": coding-interview/05-h2o.md
+      - Build Your Own Primitive:
+          - "6. Bounded Blocking Queue": coding-interview/06-bounded-blocking-queue.md
+          - "7. Thread Pool": coding-interview/07-thread-pool.md
+          - "8. Read-Write Lock": coding-interview/08-read-write-lock.md
+          - "9. Cyclic Barrier": coding-interview/09-cyclic-barrier.md
+          - "10. Delayed Task Scheduler": coding-interview/10-delayed-scheduler.md
+      - Classic Problems:
+          - "11. Deadlock: Create, Detect, Fix": coding-interview/11-deadlock.md
+          - "12. Dining Philosophers": coding-interview/12-dining-philosophers.md
+          - "13. Sleeping Barber": coding-interview/13-sleeping-barber.md
+          - "14. Bank Transfer": coding-interview/14-bank-transfer.md
+      - Real-World Systems:
+          - "15. Producer-Consumer Pipeline": coding-interview/15-pipeline.md
+          - "16. Thread-safe LRU Cache": coding-interview/16-lru-cache.md
+          - "17. Token Bucket Rate Limiter": coding-interview/17-rate-limiter.md
+          - "18. Single-Flight Cache": coding-interview/18-single-flight.md
+          - "19. Concurrent Web Crawler": coding-interview/19-web-crawler.md
+          - "20. Parallel Merge Sort": coding-interview/20-merge-sort.md
+          - "21. Best-Price Fan-out": coding-interview/21-best-price-fanout.md
   - Interview:
       - interview/index.md
       - "0-2 Years": interview/level-1-junior.md

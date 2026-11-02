@@ -10,7 +10,7 @@ you can test yourself first.
 | [6–9 Years](level-3-senior.md) | 45 | Internals, pinning, structured concurrency, debugging, performance, design trade-offs |
 | [10–15 Years](level-4-architect.md) | 40 | Platform strategy, capacity, failure isolation, distributed concurrency, migration leadership |
 | [Virtual Threads Deep-Dive](virtual-threads-qa.md) | 50 | From "what is it" to scheduler internals and architecture |
-| [Coding Problems](coding-problems.md) | 15 | Write-on-the-whiteboard problems with Java 8 and 21 solutions |
+| [Coding Problems](coding-problems.md) | 15 | Quick whiteboard versions. The full, explained set is in the [Coding Interview tab](../coding-interview/index.md) (21 problems) |
 | [System Design Rounds](system-design-rounds.md) | 8 | Concurrency-heavy design prompts with model answers |
 
 ## How interviewers grade concurrency answers

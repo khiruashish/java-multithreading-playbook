@@ -1,6 +1,7 @@
 # Coding Problems
 
-Classic whiteboard problems with solutions. Where relevant, both Java 8 and Java 21 versions are shown.
+Quick-reference versions of classic whiteboard problems. For **21 problems with runnable, tested solutions, diagrams, and
+line-by-line explanations**, see the [Coding Interview tab](../coding-interview/index.md).
 
 ## 1. Print odd/even numbers alternately with two threads
 
