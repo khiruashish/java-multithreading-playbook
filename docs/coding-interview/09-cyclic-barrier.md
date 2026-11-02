@@ -36,7 +36,7 @@ stateDiagram-v2
     direction LR
     g1: generation g1 (filling 0..parties-1)
     g2: generation g2
-    g1 --> g2: last arrival: action, waiting=0, new Generation, signalAll
+    g1 --> g2: last arrival runs action, waiting=0, new Generation, signalAll
     g2 --> g3: next round...
 ```
 

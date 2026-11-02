@@ -16,15 +16,17 @@ thread pools, and backpressure.
 * **Coordination:** one lock, **two wait-sets**: producers wait on `notFull`, and consumers wait on `notEmpty`. A put wakes
   one consumer, and a take wakes one producer.
 
-```mermaid
-flowchart LR
-    P((producers)) -->|"put: if count == 8, wait on notFull"| s7
-    subgraph Buffer["items[8] as a ring, count = 5"]
-      direction LR
-      s0["0: empty"] --- s1["1: empty"] --- s2["2: A (head)"] --- s3["3: B"] --- s4["4: C"] --- s5["5: D"] --- s6["6: E"] --- s7["7: empty (tail)"]
-    end
-    s2 -->|"take: if count == 0, wait on notEmpty"| C((consumers))
-```
+<div class="pb-slots" role="img" aria-label="A ring buffer with 8 slots. Slots 2 to 6 hold A to E. Head is slot 2, tail is slot 7.">
+<div class="pb-slot is-empty"><i>0</i><b>·</b></div>
+<div class="pb-slot is-empty"><i>1</i><b>·</b></div>
+<div class="pb-slot is-full is-head"><i>2</i><b>A</b><em>head → take()</em></div>
+<div class="pb-slot is-full"><i>3</i><b>B</b></div>
+<div class="pb-slot is-full"><i>4</i><b>C</b></div>
+<div class="pb-slot is-full"><i>5</i><b>D</b></div>
+<div class="pb-slot is-full"><i>6</i><b>E</b></div>
+<div class="pb-slot is-empty is-tail"><i>7</i><b>·</b><em>tail ← put()</em></div>
+</div>
+<p class="pb-slots-caption"><code>items[8]</code> used as a ring · <code>count = 5</code> · producers wait on <code>notFull</code> when <code>count == 8</code> · consumers wait on <code>notEmpty</code> when <code>count == 0</code></p>
 
 After `put` the tail moves to slot 0 (it wraps around: `(7 + 1) % 8`). After `take` the head moves to slot 3.
 
