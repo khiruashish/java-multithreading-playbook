@@ -1,0 +1,8 @@
+site/
+.venv/
+target/
+build/
+.gradle/
+.idea/
+*.iml
+__pycache__/

@@ -1,0 +1,68 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: mkdocs build --strict
+
+  spring-boot-sample:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: ["21", "25"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+          cache: maven
+      - run: mvn -B -ntp verify
+        working-directory: examples/spring-boot-vt
+
+  plain-java-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - name: Run single-file examples
+        working-directory: examples/plain-java
+        run: |
+          java RaceConditionDemo.java
+          java PlatformVsVirtualBenchmark.java
+          java FanOutComparison.java
+          java MillionThreads.java 100000
+          java -Djdk.virtualThreadScheduler.parallelism=2 PinningDemo.java
+          java --enable-preview --source 21 StructuredConcurrencyDemo.java
+          java --enable-preview --source 21 ScopedValueDemo.java
+
+  deploy-docs:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: [docs]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: mkdocs gh-deploy --force

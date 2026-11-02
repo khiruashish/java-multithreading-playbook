@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: product-page-service
+  threads:
+    virtual:
+      enabled: true            # Tomcat request threads, @Async, @Scheduled run on virtual threads
+  main:
+    keep-alive: true           # virtual threads are daemons; keep the JVM alive
+
+server:
+  port: 8080
+  shutdown: graceful           # finish in-flight requests on SIGTERM
+  tomcat:
+    threads:
+      max: 200                 # ignored for request handling when virtual threads are on
+    accept-count: 1000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus,threaddump
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+playbook:
+  concurrency:
+    admission:
+      max-in-flight: 5000              # Little's Law: peak RPS x p99 latency x headroom
+    fan-out-timeout: 800ms             # deadline for the whole product-page fan-out
+    cpu-pool-size: 0                   # 0 = availableProcessors()
+    bulkheads:
+      catalog:   { max-concurrent: 200, max-wait: 50ms }
+      pricing:   { max-concurrent: 100, max-wait: 50ms }
+      inventory: { max-concurrent: 100, max-wait: 50ms }
+  downstream:
+    base-url: http://localhost:8080/sim
+    self-hosted: true                  # call our own /sim endpoints on whatever port we bound
+    connect-timeout: 500ms
+    read-timeout: 1s
+  simulation:
+    catalog-latency: 120ms
+    pricing-latency: 80ms
+    inventory-latency: 60ms
+
+logging:
+  pattern:
+    level: "%5p [%X{requestId:-}]"
