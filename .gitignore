@@ -6,3 +6,5 @@ build/
 .idea/
 *.iml
 __pycache__/
+results/
+jcstress-results-*

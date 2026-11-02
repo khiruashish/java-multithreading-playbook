@@ -146,6 +146,18 @@ nav:
       - Debugging & Thread Dumps: advanced/debugging.md
       - Concurrency Patterns Catalog: advanced/patterns-catalog.md
       - Common Bugs Gallery: advanced/bugs-gallery.md
+  - Tools:
+      - tools/index.md
+      - JDK Command-line Tools: tools/jdk-cli.md
+      - JFR & Mission Control: tools/jfr-jmc.md
+      - Profilers: tools/profilers.md
+      - JMH Benchmarks: tools/jmh.md
+      - jcstress: tools/jcstress.md
+      - Testing Libraries: tools/testing-libraries.md
+      - Static Analysis: tools/static-analysis.md
+      - Production Observability: tools/observability.md
+      - Load Testing: tools/load-testing.md
+      - Concurrency Libraries: tools/libraries.md
   - Coding Interview:
       - coding-interview/index.md
       - Sequencing & Signalling:

@@ -64,6 +64,29 @@ jobs:
       - run: ./run-all.sh
         working-directory: examples/interview-coding
 
+  tools-lab:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+      - name: Awaitility + Lincheck tests
+        run: mvn -B -ntp test
+        working-directory: examples/tools-lab/testing-and-analysis
+      - name: SpotBugs must flag the deliberately buggy class
+        run: "! mvn -B -ntp compile spotbugs:check"
+        working-directory: examples/tools-lab/testing-and-analysis
+      - name: Error Prone must reject the unguarded access
+        run: "! mvn -B -ntp -Perrorprone compile"
+        working-directory: examples/tools-lab/testing-and-analysis
+      - name: Build JMH and jcstress jars
+        run: |
+          (cd examples/tools-lab/jmh && mvn -B -ntp package)
+          (cd examples/tools-lab/jcstress && mvn -B -ntp package)
+
   deploy-docs:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     needs: [docs]
