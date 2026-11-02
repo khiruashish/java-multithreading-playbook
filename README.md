@@ -14,7 +14,7 @@ with the deepest focus on **virtual threads**.
 | System Design | 50 Mermaid diagrams: executor flows, VT scheduling, request sequences, case studies, distributed concurrency |
 | Performance | Measured Java 8 vs 21 speed-ups, cost and LOC savings, JMH, jcstress, false sharing |
 | Advanced | Lock-free algorithms, thread dumps, pattern catalogue, bugs gallery |
-| Interview | 243 questions with answers (by level), a 50-question VT deep dive, 15 coding problems, 8 system design rounds |
+| Interview | 220 questions with answers (170 by level + a 50-question VT deep dive), 15 coding problems, 8 system design rounds |
 
 ## Read it
 
